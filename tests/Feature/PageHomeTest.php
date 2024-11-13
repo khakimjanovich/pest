@@ -52,7 +52,8 @@ it('shows courses by release date', function () {
     //Act
     get(route('home'))
         ->assertSeeTextInOrder([
-
+            'Course A',
+            'Course B',
         ]);
     //Assert
 });
