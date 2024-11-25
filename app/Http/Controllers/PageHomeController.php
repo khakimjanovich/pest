@@ -9,7 +9,11 @@ class PageHomeController extends Controller
 {
     public function index(): View
     {
-        $courses = Course::query()->whereNotNull('released_at')->get();
+        $courses = Course
+            ::query()
+            ->whereNotNull('released_at')
+            ->orderBy('released_at', 'desc')
+            ->get();
 
         return view('home', compact('courses'));
     }
